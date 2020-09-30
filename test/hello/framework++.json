@@ -1,0 +1,37 @@
+{
+    "name": "top",
+    "env" : {
+        "appProtocol" : "http",
+        "appPublisher" :"root",
+        "appLocalName" : "paypal",
+        "appSuffix" : "vcap.me:3000"
+    },
+    "components": [
+        {
+            "name": "log",
+            "env" : {
+                  "logLevel" : "DEBUG"
+
+            }
+
+        },
+        {
+            "name": "security",
+            "module": null
+        },
+        {
+            "name": "cp2"
+        },
+        {
+            "name": "paypal",
+            "module": "../../index.js#plug",
+            "description": "Paypal service.",
+            "env" : {
+                "fixExpense": "process.env.FIX_EXPENSE||0.3",
+                "expensePerDollar": "process.env.EXPENSE_PER_DOLLAR||0.029",
+                "payPalFile": "process.env.PAYPAL_FILE||paypal.json",
+                "payPalDir": "process.env.PAYPAL_DIR||null"
+             }
+        }
+    ]
+}
