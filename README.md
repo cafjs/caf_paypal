@@ -10,6 +10,12 @@ See https://www.cafjs.com
 
 This repository contains a `Caf.js` library to manage payment transactions.
 
+## Dependencies Warning
+
+To eliminate expensive dependencies for apps in the workspace that do not need `caf_paypal`, the package `@paypal/checkout-server-sdk@^1.0.2` has been declared as an optional dependency even though it is always needed.
+
+Applications that depend on `caf_paypal` should also include `@paypal/checkout-server-sdk@^1.0.2` in package.json as a normal dependence.
+
 ## API
 
 See {@link module:caf_paypal/proxy_paypal}
