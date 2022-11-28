@@ -72,7 +72,7 @@ module.exports = {
         test.expect(4);
         var lastId;
         try {
-            s1 = new cli.Session('ws://root-paypal.vcap.me:3000',
+            s1 = new cli.Session('ws://root-paypal.localtest.me:3000',
                                  from1, {
                                      from : from1
                                  });
